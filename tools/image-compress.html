@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Compressor</title>
+</head>
+<body>
+<h2>Image Compressor</h2>
+
+<input type="file" id="upload" accept="image/*">
+<br><br>
+<img id="preview" width="300">
+
+<script>
+document.getElementById("upload").addEventListener("change", function(e){
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(){
+    document.getElementById("preview").src = reader.result;
+  }
+  reader.readAsDataURL(file);
+});
+</script>
+
+<p>✔ No upload • 100% Safe</p>
+</body>
+</html>
